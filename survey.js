@@ -5,16 +5,51 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-rl.question('What do you think of Node.js? ', (answer) => {
+const answers = []
+//Q2
+rl.question('What is your Name? ', (answer) => {
   // TODO: Log the answer in a database
-  console.log(`Thank you for your valuable feedback: ${answer}`);
+  answers.push(answer)
+  //Q2
+  console.log(`ok, thanks: ${answer}`);
   // question 2
-  rl.question('What activiy do you like doing ', (answer) => {
-    console.log(`That is cool that you like ${answer}`)
+  rl.question('Whats an activiy you like doing? ', (answer) => {
+    answers.push(answer); // logging answer
+    console.log(`Its cool that you like ${answer}`)
+    //Q3
+    rl.question('What do you listen to while doing that? ', (answer) => {
+      answers.push(answer); //logging
+      //Q4
+      rl.question('What meal is your favourite? (ie. Dinner,lunch, brunch etc.) ', (answer) => {
 
-    rl.close();
+        answers.push(answer);
+        //Q5
+        rl.question('What is your favourite thing to eat for that meal? ', (answer) => {
+          // TODO: Log the answer in a database
+          answers.push(answer);
+          //Q6
+          rl.question('Which sport is your absolute favourite? ', (answer) => {
+            // TODO: Log the answer in a database
+            answers.push(answer);
+            //Q7
+            rl.question("What is your superpower? In a few words tell us what you're amazing at: ", (answer) => {
+              // TODO: Log the answer in a database
+              answers.push(answer);
+              console.log(`${answers[0]} loves listening to ${answers[2]} while ${answers[1]}`);
+              rl.close();
+            })
+
+          })
+
+        })
+
+      })
+
+    })
+
+
   });
-
+  // close at the end of the last question
 
 
 });
