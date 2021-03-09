@@ -35,7 +35,9 @@ rl.question('What is your Name? ', (answer) => {
             rl.question("What is your superpower? In a few words tell us what you're amazing at: ", (answer) => {
               // TODO: Log the answer in a database
               answers.push(answer);
-              console.log(`${answers[0]} loves listening to ${answers[2]} while ${answers[1]}`);
+              console.log(answers)
+              console.log(`${answers[0]} loves listening to ${answers[2]} while ${answers[1]}, devouring ${answers[4]} for ${answers[3]}, prefers ${answers[5]} over any other sport, and is amazing at ${answers[6]}.`);
+
               rl.close();
             })
 
@@ -49,7 +51,5 @@ rl.question('What is your Name? ', (answer) => {
 
 
   });
-  // close at the end of the last question
-
-
+  // close at the end of the last callback question
 });
